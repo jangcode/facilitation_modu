@@ -21,7 +21,7 @@ d:\03-Biz\codyssey-project\native-basic\B1-1\
 ```
 
 - **[required_mission.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/required_mission.md)**: 미션 요구사항을 기능/비기능으로 나누고 산출물 작업 목록을 구체화한 분석서입니다.
-- **[model_comparison_report.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/model_comparison_report.md)**: GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro 모델을 4가지 정량 평가 축을 기준으로 벤치마킹하여 최종 모델(Claude 3.5 Sonnet)을 선정한 비교서입니다.
+- **[model_comparison_report.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/model_comparison_report.md)**: GPT-5.5 Instant, Claude 4.6 Sonnet, Gemini 3.5 Flash 모델을 4가지 정량 평가 축을 기준으로 벤치마킹하여 최종 모델(Claude 4.6 Sonnet)을 선정한 비교서입니다.
 - **[system_design.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/system_design.md)**: 비즈니스 도메인에 특화된 정훈 PM 페르소나와 실명 익명화 필터, 환각 방지용 Few-shot 및 단계적 추론(Reasoning) 기법이 결합된 시스템 프롬프트 설계서입니다.
 - **[execution_log.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/execution_log.md)**: 실제 챗봇과의 10턴 이상 대화 과정을 기록하였으며, 중간 대화 톤앤매너 변경, 역할 명칭 변경 지시 및 기한 정보의 추가 유입 등 동적 컨텍스트가 완벽하게 유지됨을 검증한 대화록입니다.
 - **[goal_report.md](file:///d:/03-Biz/codyssey-project/native-basic/B1-1/goal_report.md)**: LLM의 통계적 예측 및 생성에 따른 환각 발생 원인을 설명하고, Zero/Few-shot 및 Reasoning 프롬프트를 적재적소에 활용하기 위한 기술 분석 리포트입니다.
