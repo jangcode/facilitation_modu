@@ -1,30 +1,44 @@
-# Project B: 뉴스 요약 자동화 파이프라인 프로젝트
+# [Project B] 뉴스 요약 자동화 워크플로우 만들기
 
-본 프로젝트는 자동화 툴(Make)과 생성형 AI(OpenAI)를 활용하여 최신 IT 기술 동향 뉴스를 수집하고, 요약하여 노션에 자동 저장하는 워크플로우를 구축하는 것입니다. 본 기획서 및 README는 전체 시스템 설계 의도와 운영 정책을 기록합니다.
-
-## 1. 팀 역할 및 작업 요약
-*   **AI 에이전트**: 요구사항 분석, 워크플로우 아키텍처 설계, 노션 데이터베이스 스키마 작성, 예외 처리 정책 수립 지원.
-*   **사용자(팀장)**: 기획서 내용 검토, 실제 Make.com 및 노션 연동 환경 구축, 파이프라인 테스트 및 최종 점검 수행.
-
-## 2. 주제 필터링 기준
-본 자동화 시스템에서는 범용적인 IT 뉴스 피드에서 수집되는 수많은 기사 중 핵심 정보만을 걸러내기 위해 다음과 같은 필터링 정책을 사용합니다.
-
-*   **선택된 핵심 주제**: AI 및 최신 IT 기술 동향 (Hacker News 등 기반)
-*   **필터링 키워드 목록**: `"AI"`, `"Agent"`, `"LLM"`, `"Machine Learning"`, `"OpenAI"`
-*   **필터링 적용 방식**: Make의 필터 모듈을 활용하여 기사 `Title` 혹은 `Description` 문자열에 위 키워드 중 하나 이상이 포함되어 있는지 검사합니다.
-*   **선택 이유**: 매일 방대한 양의 뉴스가 쏟아지기 때문에, 가장 파급력이 크고 실무에 유용한 AI 트렌드 소식만을 수집하여 분석의 피로도를 낮추고 효율을 극대화하기 위함입니다. 하루 1건만 선별 처리하여 API 비용 최적화도 고려했습니다.
-
-## 3. 에러 처리(Error Handling) 정책
-네트워크 불안정, API 일시적 장애(Rate Limit 등) 상황에서도 워크플로우가 멈추지 않고 자율적으로 복구 및 처리할 수 있도록 안정성을 고려하여 아래와 같이 예외 처리 정책을 도입했습니다.
-
-*   **재시도(Retry) 정책**: 
-    *   OpenAI 또는 노션 API 연동 중 오류 발생 시, Make의 **Break Error Handler** 모듈을 사용하여 최대 2회까지 재시도를 수행합니다.
-*   **실패 시 무시(Ignore) 정책**:
-    *   2회의 재시도 이후에도 정상 처리되지 않는 경우, 해당 뉴스 건은 스킵(Ignore)하여 파이프라인의 무한 루프를 방지하고 후속 스케줄 실행에 영향을 주지 않게 합니다.
-*   **선택 이유**: 과도한 API 재시도로 인한 과금(비용 폭탄) 발생을 원천 차단하고 시스템 다운을 방지하기 위함입니다.
+본 프로젝트는 노코드 자동화 툴(Make.com)과 생성형 AI(OpenAI)를 활용하여 외부 RSS 피드로부터 최신 IT/AI 기술 뉴스를 자동으로 수집하고, 핵심 내용을 요약하여 Notion 데이터베이스에 체계적으로 저장하는 **뉴스 수집 및 요약 자동화 파이프라인** 프로젝트입니다.
 
 ---
-## 파일 구성 안내
-*   [workflow_architecture.md](./workflow_architecture.md): 단계별 자동화 툴 모듈 연결 명세.
-*   [notion_db_schema.md](./notion_db_schema.md): 결과를 저장할 노션 데이터베이스 세팅 가이드.
-*   [required_mission.md](./required_mission.md): 초기 요구사항 정리 파일.
+
+## 1. 프로젝트 요약 (Project Summary)
+
+- **목적**: 수동으로 매번 여러 IT 사이트와 블로그를 탐색하여 조사하는 번거로움을 해결하고, 최신 기술 뉴스를 매일 아침 자동으로 분석·축적하여 비즈니스/기술 리서치 리소스를 최적화합니다.
+- **핵심 흐름**:
+  1. **Trigger**: 매일 오전 09:00 (KST) 자동으로 실행되는 스케줄러 트리거 작동.
+  2. **Data Collection (RSS)**: 지정된 RSS 피드(Hacker News 등)로부터 최신 기사 정보 수집.
+  3. **Filtering**: 수집된 기사 중 사전에 정의된 AI/IT 관련 핵심 키워드가 포함된 기사 1건 선별.
+  4. **AI Processing**: OpenAI GPT 모델을 호출하여 뉴스 요약을 3줄의 글머리 기호 형태로 작성.
+  5. **Auto Save**: Notion 데이터베이스에 제목, 요약문, 원문 링크, 발행일시를 중복 없이 저장.
+- **안정성 및 운영 정책**:
+  - **중복 방지**: 원문 URL을 Key값으로 활용하여 동일 기사의 중복 저장 원천 방지.
+  - **에러 핸들링**: OpenAI 및 Notion API 호출 오류 시 최대 2회 자동 재시도(Retry) 후, 지속적인 실패 시 무시(Ignore)하여 파이프라인 정지나 과금 폭탄 방지.
+
+---
+
+## 2. 폴더 구조 (Folder Structure)
+
+Project-B의 전체 폴더 구조와 각 파일의 명세는 다음과 같습니다.
+
+```text
+Project-B/
+├── README.md                     # 프로젝트 종합 안내 문서 (본 문서)
+├── mission-details.md            # [Project B] 마스터 과제 설명 및 요구사항 문서
+├── required_mission.md           # 필수 요구사항 분석 및 산출물 체크리스트
+├── workflow_architecture.md      # 스케줄 기반 RSS-AI-Notion 파이프라인 아키텍처 및 설정 가이드 (Mermaid 포함)
+└── notion_db_schema.md           # 결과를 저장할 Notion 데이터베이스 속성(Properties) 세팅 명세서
+```
+
+### 파일별 세부 역할 (File Details)
+
+- **[mission-details.md](file:///d:/03-Biz/codyssey-project/native-basic/Project-B/mission-details.md)**
+  - 본 프로젝트의 배경, 요구 조건, 보너스 미션(썸네일 생성, 감성 분석 등) 및 제약 사항이 기록된 원본 과제 상세 정보 문서입니다.
+- **[required_mission.md](file:///d:/03-Biz/codyssey-project/native-basic/Project-B/required_mission.md)**
+  - 데이터 수집, AI 가공, 자동 저장 및 안정성 확보 등 필수 구현 요구사항을 분석하고 정리한 산출물 요구 정의서입니다.
+- **[workflow_architecture.md](file:///d:/03-Biz/codyssey-project/native-basic/Project-B/workflow_architecture.md)**
+  - Make.com 등의 툴을 활용하여 파이프라인을 구축할 때 필요한 모듈별(Trigger, RSS, OpenAI, Notion, Error Handler) 상세 설정 가이드와 Mermaid 아키텍처 다이어그램 문서입니다.
+- **[notion_db_schema.md](file:///d:/03-Biz/codyssey-project/native-basic/Project-B/notion_db_schema.md)**
+  - 요약된 뉴스 데이터를 안정적이고 가독성 있게 보관하기 위한 Notion 데이터베이스 속성(컬럼명 및 컬럼 타입) 정의서입니다.
