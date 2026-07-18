@@ -19,6 +19,25 @@
         </div>
 
         <div class="flex items-center gap-4">
+          <!-- View Toggle Tabs -->
+          <div class="flex bg-slate-900 border border-slate-800 p-0.5 rounded-xl">
+            <button
+              @click="currentTab = 'simulator'"
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all"
+              :class="currentTab === 'simulator' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+            >
+              시뮬레이터 (Simulator)
+            </button>
+            <button
+              @click="currentTab = 'design'"
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5"
+              :class="currentTab === 'design' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+            >
+              디자인 시스템
+              <span class="w-1.5 h-1.5 rounded-full" :style="{ backgroundColor: stitchSettings.colorHex }"></span>
+            </button>
+          </div>
+
           <a
             href="https://github.com"
             target="_blank"
@@ -39,63 +58,66 @@
 
     <!-- Main Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <!-- Welcome Hero Section -->
-      <section class="mb-8 relative rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-indigo-950/20 to-slate-900/60 border border-slate-800/80">
-        <!-- Stitch line decorator top -->
-        <div class="absolute top-0 left-0 right-0 h-0.5" :style="customStitchLineStyle"></div>
 
-        <div class="max-w-3xl relative z-10">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium mb-4">
-            <span>✨ Vue 3 + Tailwind CSS 기반 고성능 웹앱</span>
+      <!-- Tab 1: Simulator View -->
+      <div v-if="currentTab === 'simulator'" class="space-y-8">
+        <!-- Welcome Hero Section -->
+        <section class="mb-8 relative rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-indigo-950/20 to-slate-900/60 border border-slate-800/80">
+          <!-- Stitch line decorator top -->
+          <div class="absolute top-0 left-0 right-0 h-0.5" :style="customStitchLineStyle"></div>
+
+          <div class="max-w-3xl relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium mb-4">
+              <span>✨ Vue 3 + Tailwind CSS 기반 고성능 웹앱</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
+              쉽고 빠른 AI 협업 모델, <br class="sm:hidden" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-amber-300">바이브 코딩(Vibe Coding)</span>
+            </h2>
+            <p class="text-sm sm:text-base text-slate-400 leading-relaxed mb-6">
+              모바일 기기에서 터치 한 번으로 GitHub 이슈를 제안하고, AI 에이전트 <strong>Jules</strong>가 원격 가상 세션에서 완벽히 코드를 설계 및 배포하는 현대적이고 유기적인 애자일 개발 워크플로우를 학습합니다.
+            </p>
+            <div class="flex flex-wrap gap-3">
+              <button
+                @click="scrollToDiagram"
+                class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/20 transition-all duration-300 flex items-center gap-2"
+              >
+                다이어그램 보기
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/>
+                  <polyline points="19 12 12 19 5 12"/>
+                </svg>
+              </button>
+              <a
+                href="#learn-more"
+                class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-slate-800 transition-all duration-300"
+              >
+                개념 자세히 알아보기
+              </a>
+            </div>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
-            쉽고 빠른 AI 협업 모델, <br class="sm:hidden" />
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-amber-300">바이브 코딩(Vibe Coding)</span>
-          </h2>
-          <p class="text-sm sm:text-base text-slate-400 leading-relaxed mb-6">
-            모바일 기기에서 터치 한 번으로 GitHub 이슈를 제안하고, AI 에이전트 <strong>Jules</strong>가 원격 가상 세션에서 완벽히 코드를 설계 및 배포하는 현대적이고 유기적인 애자일 개발 워크플로우를 학습합니다.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <button
-              @click="scrollToDiagram"
-              class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-lg shadow-indigo-600/20 transition-all duration-300 flex items-center gap-2"
-            >
-              다이어그램 보기
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="12" y1="5" x2="12" y2="19"/>
-                <polyline points="19 12 12 19 5 12"/>
-              </svg>
-            </button>
-            <a
-              href="#learn-more"
-              class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white text-xs font-bold border border-slate-800 transition-all duration-300"
-            >
-              개념 자세히 알아보기
-            </a>
+
+          <!-- Decorative stitched sewing pattern in back -->
+          <div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-10 hidden lg:block" :style="decorativeGridStyle"></div>
+        </section>
+
+        <!-- Content Grid: Sidebar (Stitch Tool) + Main (Workflow Diagram) -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12" id="diagram-section">
+          <!-- Left: Stitch Control Panel -->
+          <div class="lg:col-span-1">
+            <div class="sticky top-24">
+              <StitchTool @change="handleStitchChange" />
+            </div>
           </div>
-        </div>
 
-        <!-- Decorative stitched sewing pattern in back -->
-        <div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-10 hidden lg:block" :style="decorativeGridStyle"></div>
-      </section>
-
-      <!-- Content Grid: Sidebar (Stitch Tool) + Main (Workflow Diagram) -->
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12" id="diagram-section">
-        <!-- Left: Stitch Control Panel -->
-        <div class="lg:col-span-1">
-          <div class="sticky top-24">
-            <StitchTool @change="handleStitchChange" />
+          <!-- Right: Interactive Dynamic Diagram -->
+          <div class="lg:col-span-2">
+            <WorkflowDiagram :stitchSettings="stitchSettings" />
           </div>
-        </div>
+        </section>
 
-        <!-- Right: Interactive Dynamic Diagram -->
-        <div class="lg:col-span-2">
-          <WorkflowDiagram :stitchSettings="stitchSettings" />
-        </div>
-      </section>
-
-      <!-- Deep Educational Sections -->
-      <section id="learn-more" class="border-t border-slate-900 pt-12 space-y-12">
+        <!-- Deep Educational Sections -->
+        <section id="learn-more" class="border-t border-slate-900 pt-12 space-y-12">
         <div class="text-center max-w-2xl mx-auto mb-10">
           <h3 class="text-2xl font-black text-white tracking-tight">Vibe Coding 핵심 패러다임</h3>
           <p class="text-xs text-slate-400 mt-2">이 시대 최고의 생산성을 발휘하는 인공지능 주도 개발(AI-Driven Development)의 핵심 기둥</p>
@@ -157,6 +179,21 @@
           </div>
         </div>
       </section>
+      </div>
+
+      <!-- Tab 2: Design System Spec View -->
+      <div v-else-if="currentTab === 'design'" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Stitch Tool -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24">
+            <StitchTool @change="handleStitchChange" />
+          </div>
+        </div>
+        <!-- Right Design System Spec -->
+        <div class="lg:col-span-2">
+          <DesignSystem :stitchSettings="stitchSettings" />
+        </div>
+      </div>
     </main>
 
     <!-- Footer -->
@@ -180,14 +217,17 @@
 import { ref, computed } from 'vue'
 import StitchTool from './components/StitchTool.vue'
 import WorkflowDiagram from './components/WorkflowDiagram.vue'
+import DesignSystem from './components/DesignSystem.vue'
 
 export default {
   name: 'App',
   components: {
     StitchTool,
-    WorkflowDiagram
+    WorkflowDiagram,
+    DesignSystem
   },
   setup() {
+    const currentTab = ref('simulator')
     const stitchSettings = ref({
       colorId: 'pink',
       colorHex: '#ec4899',
@@ -260,6 +300,7 @@ export default {
     })
 
     return {
+      currentTab,
       stitchSettings,
       handleStitchChange,
       scrollToDiagram,
