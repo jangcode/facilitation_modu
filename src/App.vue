@@ -189,31 +189,15 @@
       </div>
 
       <!-- Tab 2: Vibe Coding Guide View -->
-      <div v-else-if="currentTab === 'guide'" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Left Stitch Tool -->
-        <div class="lg:col-span-1">
-          <div class="sticky top-24">
-            <StitchTool @change="handleStitchChange" />
-          </div>
-        </div>
-        <!-- Right Vibe Coding Guide -->
-        <div class="lg:col-span-2">
-          <VibeCodingGuide :stitchSettings="stitchSettings" />
-        </div>
+      <div v-else-if="currentTab === 'guide'">
+        <!-- Vibe Coding Guide (Full Width) -->
+        <VibeCodingGuide :stitchSettings="stitchSettings" />
       </div>
 
       <!-- Tab 3: Design System Spec View -->
-      <div v-else-if="currentTab === 'design'" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Left Stitch Tool -->
-        <div class="lg:col-span-1">
-          <div class="sticky top-24">
-            <StitchTool @change="handleStitchChange" />
-          </div>
-        </div>
-        <!-- Right Design System Spec -->
-        <div class="lg:col-span-2">
-          <DesignSystem :stitchSettings="stitchSettings" />
-        </div>
+      <div v-else-if="currentTab === 'design'">
+        <!-- Design System Spec (Full Width) -->
+        <DesignSystem :stitchSettings="stitchSettings" />
       </div>
     </main>
 
