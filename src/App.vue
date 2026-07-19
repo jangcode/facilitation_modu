@@ -29,6 +29,13 @@
               시뮬레이터 (Simulator)
             </button>
             <button
+              @click="currentTab = 'guide'"
+              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all"
+              :class="currentTab === 'guide' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+            >
+              실습 가이드 (Guide)
+            </button>
+            <button
               @click="currentTab = 'design'"
               class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5"
               :class="currentTab === 'design' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
@@ -181,7 +188,21 @@
       </section>
       </div>
 
-      <!-- Tab 2: Design System Spec View -->
+      <!-- Tab 2: Vibe Coding Guide View -->
+      <div v-else-if="currentTab === 'guide'" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Stitch Tool -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24">
+            <StitchTool @change="handleStitchChange" />
+          </div>
+        </div>
+        <!-- Right Vibe Coding Guide -->
+        <div class="lg:col-span-2">
+          <VibeCodingGuide :stitchSettings="stitchSettings" />
+        </div>
+      </div>
+
+      <!-- Tab 3: Design System Spec View -->
       <div v-else-if="currentTab === 'design'" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Left Stitch Tool -->
         <div class="lg:col-span-1">
@@ -218,13 +239,15 @@ import { ref, computed } from 'vue'
 import StitchTool from './components/StitchTool.vue'
 import WorkflowDiagram from './components/WorkflowDiagram.vue'
 import DesignSystem from './components/DesignSystem.vue'
+import VibeCodingGuide from './components/VibeCodingGuide.vue'
 
 export default {
   name: 'App',
   components: {
     StitchTool,
     WorkflowDiagram,
-    DesignSystem
+    DesignSystem,
+    VibeCodingGuide
   },
   setup() {
     const currentTab = ref('simulator')
