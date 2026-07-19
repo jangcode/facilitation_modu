@@ -77,9 +77,9 @@
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium mb-4">
               <span>✨ Vue 3 + Tailwind CSS 기반 고성능 웹앱</span>
             </div>
-            <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">
+            <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
               쉽고 빠른 AI 협업 모델, <br class="sm:hidden" />
-              <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-amber-300">바이브 코딩(Vibe Coding)</span>
+              <span class="inline-block whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-pink-400 to-amber-300">바이브 코딩(Vibe Coding)</span>
             </h2>
             <p class="text-sm sm:text-base text-slate-400 leading-relaxed mb-6">
               모바일 기기에서 터치 한 번으로 GitHub 이슈를 제안하고, AI 에이전트 <strong>Jules</strong>가 원격 가상 세션에서 완벽히 코드를 설계 및 배포하는 현대적이고 유기적인 애자일 개발 워크플로우를 학습합니다.
