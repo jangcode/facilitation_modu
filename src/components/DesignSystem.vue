@@ -10,7 +10,7 @@
         <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
           스티치 디자인 시스템 가이드
         </h3>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+        <p class="text-base text-slate-400 leading-relaxed">
           이 컴포넌트는 사이트 전체의 일관된 디자인 유지를 위한 실시간 토큰 가이드입니다. 왼쪽의 **Stitch Tool** 설정값에 맞춰 색상과 테두리가 실시간으로 연동되어 반응합니다.
         </p>
       </div>
@@ -22,7 +22,7 @@
         <div class="w-2.5 h-6 bg-pink-500 rounded-full" :style="{ backgroundColor: stitchSettings.colorHex }"></div>
         <h4 class="text-lg font-extrabold text-white">1. 색상 체계 & 디자인 토큰</h4>
       </div>
-      <p class="text-xs text-slate-400">배경색, 테두리, 포인트 스티치를 구성하는 주요 컬러 팔레트입니다.</p>
+      <p class="text-base text-slate-400">배경색, 테두리, 포인트 스티치를 구성하는 주요 컬러 팔레트입니다.</p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         <!-- Palette 1 -->
@@ -66,7 +66,7 @@
         <div class="w-2.5 h-6 bg-pink-500 rounded-full" :style="{ backgroundColor: stitchSettings.colorHex }"></div>
         <h4 class="text-lg font-extrabold text-white">2. 타이포그래피 (Typography)</h4>
       </div>
-      <p class="text-xs text-slate-400">텍스트의 의미적 성격에 따른 일관된 크기 및 두께 표준입니다.</p>
+      <p class="text-base text-slate-400">텍스트의 의미적 성격에 따른 일관된 크기 및 두께 표준입니다.</p>
 
       <div class="bg-slate-900/40 border border-slate-800 rounded-xl p-6 space-y-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center border-b border-slate-800/50 pb-4">
@@ -85,10 +85,18 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Body / Small Desc</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center border-b border-slate-800/50 pb-4">
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Body / Standard Desc</div>
           <div class="md:col-span-2">
-            <p class="text-xs text-slate-400 leading-relaxed">인공지능 에이전트 Jules가 가상 샌드박스 환경에서 코드를 분석, 자동 설계, 구현 및 테스트를 자동 수행합니다.</p>
+            <p class="text-base text-slate-400 leading-relaxed">인공지능 에이전트 Jules가 가상 샌드박스 환경에서 코드를 분석, 자동 설계, 구현 및 테스트를 자동 수행합니다.</p>
+            <code class="text-[10px] text-pink-400 bg-slate-950 px-1.5 py-0.5 rounded font-mono">text-base text-slate-400 leading-relaxed</code>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+          <div class="text-[11px] font-mono text-slate-500 uppercase tracking-wider">Subtitle / Small Desc</div>
+          <div class="md:col-span-2">
+            <p class="text-xs text-slate-400 leading-relaxed">이 텍스트는 보조 메타데이터나 덜 중요한 카드 라벨 등에 제한적으로 적용됩니다.</p>
             <code class="text-[10px] text-pink-400 bg-slate-950 px-1.5 py-0.5 rounded font-mono">text-xs text-slate-400 leading-relaxed</code>
           </div>
         </div>
@@ -101,7 +109,7 @@
         <div class="w-2.5 h-6 bg-pink-500 rounded-full" :style="{ backgroundColor: stitchSettings.colorHex }"></div>
         <h4 class="text-lg font-extrabold text-white">3. 스티치 테두리 스타일 가이드 (Stitch Borders)</h4>
       </div>
-      <p class="text-xs text-slate-400">재봉기 설정에 따라 반응형으로 바인딩되는 4대 테두리 스타일 및 클래스입니다.</p>
+      <p class="text-base text-slate-400">재봉기 설정에 따라 반응형으로 바인딩되는 4대 테두리 스타일 및 클래스입니다.</p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         <!-- Dashed Box -->
@@ -160,7 +168,7 @@
         <div class="w-2.5 h-6 bg-pink-500 rounded-full" :style="{ backgroundColor: stitchSettings.colorHex }"></div>
         <h4 class="text-lg font-extrabold text-white">4. 버튼 & 뱃지 컴포넌트</h4>
       </div>
-      <p class="text-xs text-slate-400">사용자가 조작을 가하거나 정보를 상태별로 분류하기 위한 가이드라인입니다.</p>
+      <p class="text-base text-slate-400">사용자가 조작을 가하거나 정보를 상태별로 분류하기 위한 가이드라인입니다.</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Buttons Guide -->

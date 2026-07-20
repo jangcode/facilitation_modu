@@ -29,6 +29,7 @@
 - **Main Heading / Hero Title**: `text-3xl sm:text-4xl font-black text-white tracking-tight`
 - **Section Title**: `text-2xl font-black text-white tracking-tight`
 - **Card / Group Title**: `text-base font-extrabold text-white`
+- **Body / Standard Desc**: `text-base text-slate-400 leading-relaxed`
 - **Subtitle / Small Desc**: `text-xs text-slate-400 leading-relaxed`
 - **Metadata / Labels**: `text-[10px] sm:text-xs font-semibold tracking-wider uppercase`
 - **Code / Value Label**: `font-mono text-xs text-slate-300 bg-slate-900`

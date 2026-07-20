@@ -11,7 +11,7 @@
         <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-3">
           바이브 코딩 실습 가이드
         </h2>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-3xl">
+        <p class="text-base text-slate-400 leading-relaxed max-w-3xl">
           아이디어에서 작동하는 제품까지 빈 페이지에서 빠른 속도로 구현하는 **인공지능 주도 개발(AI-Driven Development) 플레이북**입니다. <br class="hidden sm:inline" />
           단순히 더 나은 프롬프트를 쓰는 기술을 넘어, 프롬프트를 보내기 전에 더 나은 사고를 하고 이를 에이전트와 동기화하는 구조화된 실습 가이드입니다.
         </p>
@@ -50,7 +50,7 @@
           <h3 class="text-base font-extrabold text-white mb-3 flex items-center gap-2">
             💡 아이디어에서 제품까지: AI 기반 개발의 패러다임 쉬프트
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          <p class="text-base text-slate-400 leading-relaxed mb-4">
             대부분의 개발자는 AI 코딩 도구를 열고 바로 코딩을 요청합니다. 이것은 분위기 코딩의 붕괴나 기능 표류(Feature Drift)로 이어지는 흔한 실수입니다.
             AI가 만들어내는 결과물의 품질은 당신이 AI에게 건네주는 <strong>'사고(Thinking)'의 품질</strong>로 결정됩니다. AI는 코드를 작성하는 강력한 조수일 뿐, 아키텍처적 설계와 비즈니스 목적을 정의하는 것은 당신의 몫입니다.
           </p>
@@ -60,7 +60,7 @@
               <h4 class="font-bold text-red-400 mb-2 flex items-center gap-1.5">
                 ⚠️ 실패 유형 1: 분위기 코딩 붕괴 (Vibe Collapse)
               </h4>
-              <p class="text-slate-400 leading-relaxed">
+              <p class="text-base text-slate-400 leading-relaxed">
                 넓고 모호하게 설명하여 처음 한 시간은 조립이 빠르지만, 기능을 덧붙일 때 이전에 결정했던 규칙들을 에이전트 스스로 모순되게 바꾸며 코드가 충돌하고 무너집니다. 토대가 없기 때문입니다.
               </p>
             </div>
@@ -68,7 +68,7 @@
               <h4 class="font-bold text-yellow-400 mb-2 flex items-center gap-1.5">
                 ⚠️ 실패 유형 2: 기능 표류 (Feature Drift)
               </h4>
-              <p class="text-slate-400 leading-relaxed">
+              <p class="text-base text-slate-400 leading-relaxed">
                 몇 주 뒤에 돌아와 새로운 기능을 추가하려 하면 에이전트가 이전의 아키텍처 결정, 네이밍 규칙, 특정 로직의 설계 의도를 잊어버리고 덮어써 버립니다. 세션 간 연속성이 없기 때문입니다.
               </p>
             </div>
@@ -80,7 +80,7 @@
           <h3 class="text-sm font-extrabold text-white mb-4 uppercase tracking-wider font-mono">
             ⚡ 실전 바이브 코딩 명령어 (Core Workflow Pattern)
           </h3>
-          <p class="text-xs text-slate-400 mb-4">실용주의 바이브 코더들이 에이전트와 긴밀하게 소통할 때 사용하는 표준적인 4단계 제어 흐름입니다.</p>
+          <p class="text-base text-slate-400 mb-4">실용주의 바이브 코더들이 에이전트와 긴밀하게 소통할 때 사용하는 표준적인 4단계 제어 흐름입니다.</p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 flex flex-col justify-between">
@@ -124,7 +124,7 @@
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
             🌱 1단계: 코드 한 줄 쓰기 전에, 설계자(Architect)가 되세요
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          <p class="text-base text-slate-400 leading-relaxed mb-4">
             에이전트가 코드에 손대기 전에 시스템을 머릿속에 설계하고, 규칙을 명확히 정의하는 일종의 **"인간-AI 예비 대화"** 세션이 필수적입니다.
             Claude, ChatGPT 등 범용 AI 도구를 열고 아이디어를 다듬기 위해 아래 프롬프트를 복사하여 대화를 시작해 보세요.
           </p>
@@ -186,7 +186,7 @@
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
             📂 2단계: 6대 컨텍스트 파일 패턴 (Context Memory Bank)
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
+          <p class="text-base text-slate-400 leading-relaxed">
             AI 에이전트는 세션 간 연속적인 메모리가 없으므로, 프로젝트 루트의 <strong>Memory Bank</strong>를 읽고 컨텍스트를 회복하도록 해야 합니다.
             이 6개의 파일을 루트 `context/` 폴더에 배치하고 진입점으로 `AGENTS.md`(또는 `CLAUDE.md`)를 두어 에이전트가 작업을 시작하기 전 무조건 읽게 만드세요.
           </p>
@@ -247,7 +247,7 @@
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
             🎯 3단계: 빌드 분해 & 스펙 기반 개발 (Spec-Driven Development)
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          <p class="text-base text-slate-400 leading-relaxed mb-4">
             모든 기능은 에이전트가 손대기 전에 명확하고 검증 가능한 종료 상태를 가져야 합니다.
             전체 비즈니스 요구사항을 '독립된 빌드 단위(Unit)'로 조각낸 뒤, 각 단위마다 개별 스펙 문서를 작성하세요.
           </p>
@@ -293,7 +293,7 @@
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
             🚀 4단계: 에이전트와 교류하는 3-프롬프트 루프 (3-Prompt Workflow)
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          <p class="text-base text-slate-400 leading-relaxed mb-4">
             스펙 문서와 기획이 끝났다면 실제 구현 세션을 열고 아래와 같이 매우 정밀하게 설계된 세 단계의 조율 명령어를 통해 완벽한 품질을 유지해 나가세요.
           </p>
 
@@ -355,7 +355,7 @@
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
             ✅ 실시간 바이브 코딩 실습 체크리스트 (Self-Verification Panel)
           </h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-4">
+          <p class="text-base text-slate-400 leading-relaxed mb-4">
             당신이 기획한 프로젝트를 에이전트와 함께 완주하기까지의 점검 요소들을 하나씩 체크하며 온전한 흐름을 유지하고 있는지 실시간 확인해 보세요.
           </p>
 
