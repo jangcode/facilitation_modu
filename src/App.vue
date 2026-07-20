@@ -127,7 +127,7 @@
         <section id="learn-more" class="border-t border-slate-900 pt-12 space-y-12">
         <div class="text-center max-w-2xl mx-auto mb-10">
           <h3 class="text-2xl font-black text-white tracking-tight">Vibe Coding 핵심 패러다임</h3>
-          <p class="text-xs text-slate-400 mt-2">이 시대 최고의 생산성을 발휘하는 인공지능 주도 개발(AI-Driven Development)의 핵심 기둥</p>
+          <p class="text-base text-slate-400 mt-2">이 시대 최고의 생산성을 발휘하는 인공지능 주도 개발(AI-Driven Development)의 핵심 기둥</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -144,7 +144,7 @@
               </svg>
             </div>
             <h4 class="text-base font-extrabold text-white mb-2">모바일 제어 & 기민함</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <p class="text-base text-slate-400 leading-relaxed">
               기존의 무거운 로컬 개발 세팅에서 벗어나, 버스 안이나 카페 등 어디서나 스마트폰 GitHub 앱으로 기획을 마칩니다. AI와 유연하게 생각을 주고받는 진정한 기민함을 얻습니다.
             </p>
           </div>
@@ -162,7 +162,7 @@
               </svg>
             </div>
             <h4 class="text-base font-extrabold text-white mb-2">지능형 에이전트 Jules</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <p class="text-base text-slate-400 leading-relaxed">
               에이전트는 단순 오토컴플릿 도구가 아닙니다. 리포지토리 전체 분석, 빌드 명령어 설계, 테스트 케이스 생성 및 사전 실행 및 자가 수정을 통해 완결된 산출물을 직접 빌드합니다.
             </p>
           </div>
@@ -180,7 +180,7 @@
               </svg>
             </div>
             <h4 class="text-base font-extrabold text-white mb-2">Vercel 호스팅 & 즉시 배포</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
+            <p class="text-base text-slate-400 leading-relaxed">
               PR 승인 즉시 Vercel의 고성능 Edge 네트워크에 무중단 서버리스 아키텍처로 전 세계 사용자에게 1초 만에 배포되어 빠른 검증 주기와 지속적인 릴리즈 피드백 루프를 구축합니다.
             </p>
           </div>
