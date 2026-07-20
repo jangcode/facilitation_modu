@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
     <!-- Header -->
     <header class="border-b border-slate-900 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-16 py-3 md:py-0 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-4">
         <div class="flex items-center gap-3">
           <div
             class="w-8 h-8 rounded-lg flex items-center justify-center font-black text-lg transition-all duration-500"
@@ -18,26 +18,26 @@
           </div>
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full md:w-auto">
           <!-- View Toggle Tabs -->
-          <div class="flex bg-slate-900 border border-slate-800 p-0.5 rounded-xl">
+          <div class="flex bg-slate-900 border border-slate-800 p-0.5 rounded-xl w-full sm:w-auto justify-between sm:justify-start">
             <button
               @click="currentTab = 'simulator'"
-              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all"
+              class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex-1 sm:flex-none text-center"
               :class="currentTab === 'simulator' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
             >
-              시뮬레이터 (Simulator)
+              시뮬레이터<span class="hidden sm:inline"> (Simulator)</span>
             </button>
             <button
               @click="currentTab = 'guide'"
-              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all"
+              class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex-1 sm:flex-none text-center"
               :class="currentTab === 'guide' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
             >
-              실습 가이드 (Guide)
+              실습 가이드<span class="hidden sm:inline"> (Guide)</span>
             </button>
             <button
               @click="currentTab = 'design'"
-              class="px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5"
+              class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap flex-1 sm:flex-none"
               :class="currentTab === 'design' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
             >
               디자인 시스템
@@ -45,19 +45,21 @@
             </button>
           </div>
 
-          <a
-            href="https://github.com"
-            target="_blank"
-            class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 bg-slate-900/60 border border-slate-800 rounded-lg hover:border-slate-700 transition-all"
-          >
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
-            </svg>
-            GitHub Repo
-          </a>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <a
+              href="https://github.com"
+              target="_blank"
+              class="text-xs text-slate-400 hover:text-white flex items-center gap-1.5 px-3 py-1.5 bg-slate-900/60 border border-slate-800 rounded-lg hover:border-slate-700 transition-all"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+              </svg>
+              GitHub Repo
+            </a>
 
-          <div class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-[11px] font-semibold">
-            Vercel Hosted
+            <div class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-[11px] font-semibold whitespace-nowrap">
+              Vercel Hosted
+            </div>
           </div>
         </div>
       </div>
