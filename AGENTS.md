@@ -19,3 +19,7 @@ This repository follows the **Stitch Design System** as defined in `DESIGN_SYSTE
 
 4. **Verify Build Stability:**
    - Always run `npm run build` after any visual or script changes to verify there are no linting, typescript, or build-time issues.
+
+## Directories
+
+- `contents/`: This folder is where users directly upload files/contents. Do not modify or delete files in this folder unless explicitly instructed by the user.
