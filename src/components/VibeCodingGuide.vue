@@ -184,11 +184,11 @@
       <div v-if="activeTab === 'context'" class="space-y-6">
         <div class="bg-slate-900/50 p-6 rounded-2xl border" :style="getStitchStyle('double')">
           <h3 class="text-base font-extrabold text-white mb-2 flex items-center gap-2">
-            📂 2단계: 6대 컨텍스트 파일 패턴 (Context Memory Bank)
+            📂 2단계: 6대 컨텐츠 파일 패턴 (Contents Memory Bank)
           </h3>
           <p class="text-base text-slate-400 leading-relaxed">
             AI 에이전트는 세션 간 연속적인 메모리가 없으므로, 프로젝트 루트의 <strong>Memory Bank</strong>를 읽고 컨텍스트를 회복하도록 해야 합니다.
-            이 6개의 파일을 루트 `context/` 폴더에 배치하고 진입점으로 `AGENTS.md`(또는 `CLAUDE.md`)를 두어 에이전트가 작업을 시작하기 전 무조건 읽게 만드세요.
+            이 6개의 파일을 루트 `contents/` 폴더에 배치하고 진입점으로 `AGENTS.md`(또는 `CLAUDE.md`)를 두어 에이전트가 작업을 시작하기 전 무조건 읽게 만드세요.
           </p>
         </div>
 
@@ -426,7 +426,7 @@ export default {
     const tabs = [
       { id: 'intro', name: '가이드 개요', icon: '📖' },
       { id: 'planning', name: '빌드 전 기획', icon: '💭' },
-      { id: 'context', name: '6대 컨텍스트 설계', icon: '📁' },
+      { id: 'context', name: '6대 컨텐츠 설계', icon: '📁' },
       { id: 'spec', name: '작업 단위 세분화', icon: '🎯' },
       { id: 'workflow', name: '실전 워크플로우', icon: '⚡' },
       { id: 'checklist', name: '자가 실습 진단', icon: '✅' }
@@ -470,8 +470,8 @@ export default {
 제가 모호하게 답할 때나 잠재적 문제가 보일 때는 반박해 주세요.
 코드를 작성하기 전에 시스템에 대해 명확하게 생각할 수 있도록 도와주세요.`
 
-    const p1Code = `Read context/specs/NN-feature-name.md.
-Update context/progress-tracker.md to mark this as in progress.
+    const p1Code = `Read contents/specs/NN-feature-name.md.
+Update contents/progress-tracker.md to mark this as in progress.
 Implement it exactly as specified.
 Do not go beyond the scope of this unit.`
 
@@ -481,7 +481,7 @@ Current: [what was built].
 Fix only this. Do not change anything else.`
 
     const p3Code = `Implementation is complete and verified.
-Mark unit NN complete in context/progress-tracker.md.
+Mark unit NN complete in contents/progress-tracker.md.
 Push branch feat/NN-feature-name to GitHub.`
 
     const specTemplate = `# Unit NN: [Feature Name]
@@ -522,14 +522,14 @@ Description.
 
 Read the following files in order before implementing or making any architectural decision:
 
-1. \`context/project-overview.md\` — product definition, goals, features, and scope
-2. \`context/architecture.md\` — system structure, boundaries, storage model, and invariants
-3. \`context/ui-context.md\` — theme, colors, typography, and component conventions
-4. \`context/code-standards.md\` — implementation rules and conventions
-5. \`context/ai-workflow-rules.md\` — development workflow, scoping rules, and delivery approach
-6. \`context/progress-tracker.md\` — current phase, completed work, open questions, and next steps
+1. \`contents/project-overview.md\` — product definition, goals, features, and scope
+2. \`contents/architecture.md\` — system structure, boundaries, storage model, and invariants
+3. \`contents/ui-context.md\` — theme, colors, typography, and component conventions
+4. \`contents/code-standards.md\` — implementation rules and conventions
+5. \`contents/ai-workflow-rules.md\` — development workflow, scoping rules, and delivery approach
+6. \`contents/progress-tracker.md\` — current phase, completed work, open questions, and next steps
 
-Update \`context/progress-tracker.md\` after each meaningful implementation change.
+Update \`contents/progress-tracker.md\` after each meaningful implementation change.
 
 If implementation changes the architecture, scope, or standards documented in the context files, update the relevant file before continuing.`
       },
@@ -700,7 +700,7 @@ Update this file after every meaningful implementation change.
     const checklistItems = ref([
       { phase: '기획', text: '기획용 대화 프롬프트를 AI 에이전트에 질의하여 모호함 제거하기', description: '기능의 범위와 기술 제약조건을 사전에 완전히 정의하고, "내가 이미 아키텍처링한 것을 AI가 수행"하도록 준비했는지 점검합니다.', checked: false },
       { phase: '환경', text: '루트 경로에 Memory Entry (AGENTS.md 등) 생성하기', description: 'AI 에이전트가 리포지토리 로딩 시 최우선적으로 읽을 가이드라인 체계를 셋업했는지 확인합니다.', checked: false },
-      { phase: '설계', text: 'context/ 폴더 내에 6대 컨텍스트 뼈대 작성하기', description: 'Project Overview, Architecture, Code Standards, UI Context, Workflows, Progress Tracker 6개 파일을 구성하였는지 확인합니다.', checked: false },
+      { phase: '설계', text: 'contents/ 폴더 내에 6대 컨텐츠 뼈대 작성하기', description: 'Project Overview, Architecture, Code Standards, UI Context, Workflows, Progress Tracker 6개 파일을 구성하였는지 확인합니다.', checked: false },
       { phase: '분해', text: '빌드 플랜(00-build-plan.md) 구성하기', description: '어떤 기능이든 15분~1시간 내외에 빌드가 가능한 수준의 작업 단위(Unit)로 명확한 종속성에 맞춰 정렬했는지 확인합니다.', checked: false },
       { phase: '수행', text: '개별 스펙 가이드를 읽히는 First Prompt 사용하기', description: 'AI에게 스펙만을 정확하게 읽히고 그 범위를 초과하는 추측성 오염이 없도록 제어하는 3-프롬프트 루프를 준수했는지 확인합니다.', checked: false },
       { phase: '완료', text: 'npm run build를 통해 프로덕션 검증 완료하기', description: '작업 단위가 완료될 때마다 로컬 테스트와 빌드를 수행하고, Progress Tracker를 꼼꼼하게 업데이트하여 세션 연속성을 확보했는지 점검합니다.', checked: false }
