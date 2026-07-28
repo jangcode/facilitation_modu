@@ -28,13 +28,42 @@
             >
               시뮬레이터<span class="hidden sm:inline"> (Simulator)</span>
             </button>
-            <button
-              @click="currentTab = 'guide'"
-              class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex-1 sm:flex-none text-center"
-              :class="currentTab === 'guide' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
-            >
-              실습 가이드<span class="hidden sm:inline"> (Guide)</span>
-            </button>
+
+            <!-- Dropdown submenu container for '실습 가이드' -->
+            <div class="relative dropdown-container flex-1 sm:flex-none">
+              <button
+                @click.stop="toggleDropdown"
+                class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap w-full text-center flex items-center justify-center gap-1"
+                :class="(currentTab === 'guide' || currentTab === 'environments') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+              >
+                실습 가이드<span class="hidden sm:inline"> (Guide)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                v-if="dropdownOpen"
+                class="absolute right-0 mt-1.5 w-48 bg-slate-900 border border-slate-800 rounded-xl shadow-xl py-1 z-50"
+              >
+                <button
+                  @click="selectTabFromDropdown('guide')"
+                  class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2"
+                  :class="currentTab === 'guide' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
+                >
+                  <span>📖</span> 실습 플레이북
+                </button>
+                <button
+                  @click="selectTabFromDropdown('environments')"
+                  class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
+                  :class="currentTab === 'environments' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
+                >
+                  <span>🌐</span> 실행·개발·운영 환경
+                </button>
+              </div>
+            </div>
+
             <button
               @click="currentTab = 'design'"
               class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap flex-1 sm:flex-none"
@@ -201,6 +230,12 @@
         <!-- Design System Spec (Full Width) -->
         <DesignSystem :stitchSettings="stitchSettings" />
       </div>
+
+      <!-- Tab 4: Environments View -->
+      <div v-else-if="currentTab === 'environments'">
+        <!-- Environments & Tech Stack (Full Width) -->
+        <Environments :stitchSettings="stitchSettings" />
+      </div>
     </main>
 
     <!-- Footer -->
@@ -221,11 +256,12 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import StitchTool from './components/StitchTool.vue'
 import WorkflowDiagram from './components/WorkflowDiagram.vue'
 import DesignSystem from './components/DesignSystem.vue'
 import VibeCodingGuide from './components/VibeCodingGuide.vue'
+import Environments from './components/Environments.vue'
 
 export default {
   name: 'App',
@@ -233,10 +269,35 @@ export default {
     StitchTool,
     WorkflowDiagram,
     DesignSystem,
-    VibeCodingGuide
+    VibeCodingGuide,
+    Environments
   },
   setup() {
     const currentTab = ref('simulator')
+    const dropdownOpen = ref(false)
+
+    const toggleDropdown = () => {
+      dropdownOpen.value = !dropdownOpen.value
+    }
+
+    const selectTabFromDropdown = (tabId) => {
+      currentTab.value = tabId
+      dropdownOpen.value = false
+    }
+
+    const closeDropdown = (e) => {
+      if (!e.target.closest('.dropdown-container')) {
+        dropdownOpen.value = false
+      }
+    }
+
+    onMounted(() => {
+      window.addEventListener('click', closeDropdown)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('click', closeDropdown)
+    })
     const stitchSettings = ref({
       colorId: 'pink',
       colorHex: '#ec4899',
@@ -316,7 +377,10 @@ export default {
       logoStyle,
       customStitchLineStyle,
       decorativeGridStyle,
-      getItemStyle
+      getItemStyle,
+      dropdownOpen,
+      toggleDropdown,
+      selectTabFromDropdown
     }
   }
 }
