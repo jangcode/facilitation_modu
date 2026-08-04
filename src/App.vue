@@ -34,7 +34,7 @@
               <button
                 @click.stop="toggleDropdown"
                 class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap w-full text-center flex items-center justify-center gap-1"
-                :class="(currentTab === 'guide' || currentTab === 'environments' || currentTab === 'extensions') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+                :class="(currentTab === 'guide' || currentTab === 'environments' || currentTab === 'extensions' || currentTab === 'spec-dev') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
               >
                 실습 가이드<span class="hidden sm:inline"> (Guide)</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }">
@@ -67,6 +67,13 @@
                   :class="currentTab === 'extensions' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
                 >
                   <span>🔍</span> 파일 확장자
+                </button>
+                <button
+                  @click="selectTabFromDropdown('spec-dev')"
+                  class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
+                  :class="currentTab === 'spec-dev' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
+                >
+                  <span>🎯</span> Spec 기반 개발
                 </button>
               </div>
             </div>
@@ -249,6 +256,12 @@
         <!-- File Extensions Info (Full Width) -->
         <FileExtensions :stitchSettings="stitchSettings" />
       </div>
+
+      <!-- Tab 6: Spec-Driven Development View -->
+      <div v-if="currentTab === 'spec-dev'">
+        <!-- Spec-Driven Development (Full Width) -->
+        <SpecDevelopment :stitchSettings="stitchSettings" />
+      </div>
     </main>
 
     <!-- Footer -->
@@ -276,6 +289,7 @@ import DesignSystem from './components/DesignSystem.vue'
 import VibeCodingGuide from './components/VibeCodingGuide.vue'
 import Environments from './components/Environments.vue'
 import FileExtensions from './components/FileExtensions.vue'
+import SpecDevelopment from './components/SpecDevelopment.vue'
 
 export default {
   name: 'App',
@@ -285,7 +299,8 @@ export default {
     DesignSystem,
     VibeCodingGuide,
     Environments,
-    FileExtensions
+    FileExtensions,
+    SpecDevelopment
   },
   setup() {
     const currentTab = ref('simulator')
