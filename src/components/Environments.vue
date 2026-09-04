@@ -56,7 +56,7 @@
                 </svg>
               </div>
               <h5 class="text-base font-extrabold text-white mb-2">개발 환경 (Development)</h5>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-base text-slate-400 leading-relaxed">
                 사용자의 아이디어 발제와 이슈 관리가 일어나는 시발점입니다. 모바일 기기의 GitHub 앱이나 로컬 워크스페이스를 통해 요구사항이 등록됩니다.
               </p>
             </div>
@@ -84,7 +84,7 @@
                 </svg>
               </div>
               <h5 class="text-base font-extrabold text-white mb-2">실행 환경 (Runtime)</h5>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-base text-slate-400 leading-relaxed">
                 AI 에이전트 Jules가 직접 패키지를 설치하고, 코드를 작성하며, 빌드 테스트를 자동 수행하는 가상 샌드박스 안전 격리 컨테이너 환경입니다.
               </p>
             </div>
@@ -112,7 +112,7 @@
                 </svg>
               </div>
               <h5 class="text-base font-extrabold text-white mb-2">운영 환경 (Production)</h5>
-              <p class="text-xs text-slate-400 leading-relaxed">
+              <p class="text-base text-slate-400 leading-relaxed">
                 Jules가 제출한 PR이 머지되면 Vercel 클라우드의 고성능 글로벌 엣지 네트워크에 서버리스 아키텍처로 자동 빌드 및 배포되는 환경입니다.
               </p>
             </div>
@@ -182,26 +182,26 @@
             <p class="text-base text-slate-400 leading-relaxed mb-6">
               Vibe Coding의 핵심은 가볍고 즉각적인 기획 전환입니다. 로컬 PC에 번거로운 SDK를 모두 설치하지 않아도, GitHub 브라우저 환경 및 모바일 클라이언트에서 바로 이슈를 등록하고 제어할 수 있는 유연한 워크플로우를 보장합니다.
             </p>
-            <ul class="space-y-3.5 text-xs text-slate-300">
+            <ul class="space-y-3.5 text-base text-slate-300">
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">GitHub Client Framework:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">모바일 GitHub 공식 App을 활용한 신속한 UI 개선 및 에이전트 할당 시스템.</p>
+                  <strong class="text-white text-base">GitHub Client Framework:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">모바일 GitHub 공식 App을 활용한 신속한 UI 개선 및 에이전트 할당 시스템.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Vue 3 Single Page App:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">Composition API와 정적 상태 관리를 활용한 고성능 사용자 반응형 대시보드.</p>
+                  <strong class="text-white text-base">Vue 3 Single Page App:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">Composition API와 정적 상태 관리를 활용한 고성능 사용자 반응형 대시보드.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-blue-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Tailwind CSS v3:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">디자인 시스템 규격을 클래스 단위로 모듈화하여 일관성 있는 스타일링 지원.</p>
+                  <strong class="text-white text-base">Tailwind CSS v3:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">디자인 시스템 규격을 클래스 단위로 모듈화하여 일관성 있는 스타일링 지원.</p>
                 </div>
               </li>
             </ul>
@@ -224,26 +224,26 @@
             <p class="text-base text-slate-400 leading-relaxed mb-6">
               AI 에이전트 Jules가 코드를 빌드하고 시뮬레이션을 수행하는 가상 실행 엔진입니다. 외부 망과의 통신 제어 및 패키지 관리, 가상 셸 스크립트 실행 환경을 완벽히 격리하여 안전하고 정확한 산출물을 검증합니다.
             </p>
-            <ul class="space-y-3.5 text-xs text-slate-300">
+            <ul class="space-y-3.5 text-base text-slate-300">
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Isolated Sandbox Sandbox:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">메모리 격리 기반 가상 머신으로, 에이전트 오염 물질의 차단 및 가상 셸 명령어 실행 지원.</p>
+                  <strong class="text-white text-base">Isolated Sandbox Sandbox:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">메모리 격리 기반 가상 머신으로, 에이전트 오염 물질의 차단 및 가상 셸 명령어 실행 지원.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Node.js Runtime & NPM:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">안정적인 패키지 생태계와 빌드 의존성 관리를 위한 최신 롱텀 서포트 런타임 탑재.</p>
+                  <strong class="text-white text-base">Node.js Runtime & NPM:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">안정적인 패키지 생태계와 빌드 의존성 관리를 위한 최신 롱텀 서포트 런타임 탑재.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-purple-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Vite Build Tool:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">초고속 번들러 및 빌드 캐싱으로, Jules의 빌드 검증 속도를 극대화하여 피드백 주기 최소화.</p>
+                  <strong class="text-white text-base">Vite Build Tool:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">초고속 번들러 및 빌드 캐싱으로, Jules의 빌드 검증 속도를 극대화하여 피드백 주기 최소화.</p>
                 </div>
               </li>
             </ul>
@@ -266,26 +266,26 @@
             <p class="text-base text-slate-400 leading-relaxed mb-6">
               최종 제품이 호스팅되는 클라우드 환경입니다. Edge 네트워크 캐싱과 SSL/DNS 자동 관리, 무중단 배포를 통해 승인 완료된 브랜치의 프로덕션 배포 파이프라인을 무중단으로 관리합니다.
             </p>
-            <ul class="space-y-3.5 text-xs text-slate-300">
+            <ul class="space-y-3.5 text-base text-slate-300">
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Vercel Deployment:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">GitHub 리포지토리 PR 및 메인 브랜치와 직결된 즉시 프리뷰(Instant Preview) 엔진.</p>
+                  <strong class="text-white text-base">Vercel Deployment:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">GitHub 리포지토리 PR 및 메인 브랜치와 직결된 즉시 프리뷰(Instant Preview) 엔진.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">Edge Caching Network:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">지연 시간을 최소화하여 글로벌 전역에서 즉각적인 정적 리소스 로딩 속도 유지.</p>
+                  <strong class="text-white text-base">Edge Caching Network:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">지연 시간을 최소화하여 글로벌 전역에서 즉각적인 정적 리소스 로딩 속도 유지.</p>
                 </div>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-emerald-400 font-bold">▪</span>
                 <div>
-                  <strong class="text-white">HTTPS/SSL Security Policy:</strong>
-                  <p class="text-xs text-slate-400 mt-0.5 leading-relaxed">자동 갱신되는 SSL 인증서와 엄격한 보안 오리진 설정을 통한 클라이언트 무한 보호.</p>
+                  <strong class="text-white text-base">HTTPS/SSL Security Policy:</strong>
+                  <p class="text-base text-slate-400 mt-0.5 leading-relaxed">자동 갱신되는 SSL 인증서와 엄격한 보안 오리진 설정을 통한 클라이언트 무한 보호.</p>
                 </div>
               </li>
             </ul>

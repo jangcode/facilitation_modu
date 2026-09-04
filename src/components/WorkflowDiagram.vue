@@ -7,7 +7,7 @@
           <span class="inline-block w-2 h-6 bg-indigo-500 rounded-full"></span>
           바이브 코딩 워크플로우 다이어그램
         </h4>
-        <p class="text-xs text-slate-400 mt-1">이슈 등록부터 머지, Vercel 자동 배포까지 한눈에 확인하는 원격 협업 흐름</p>
+        <p class="text-base text-slate-400 mt-1">이슈 등록부터 머지, Vercel 자동 배포까지 한눈에 확인하는 원격 협업 흐름</p>
       </div>
       <div class="flex items-center gap-1.5 px-3 py-1 bg-slate-950 border border-slate-800 rounded-full">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -35,9 +35,9 @@
             </svg>
           </div>
 
-          <h5 class="text-sm font-bold text-white mb-1.5">모바일 이슈 등록</h5>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
-            사용자는 휴대폰의 <strong class="text-blue-400 font-medium">GitHub 앱</strong>을 활용하여 요구사항이나 버그 이슈를 발제하고 <code class="text-slate-300 bg-slate-900 px-1 py-0.5 rounded text-[10px]">@jules</code> 에이전트에게 할당합니다.
+          <h5 class="text-base font-extrabold text-white mb-1.5">모바일 이슈 등록</h5>
+          <p class="text-base text-slate-400 leading-relaxed">
+            사용자는 휴대폰의 <strong class="text-blue-400 font-medium">GitHub 앱</strong>을 활용하여 요구사항이나 버그 이슈를 발제하고 <code class="text-slate-300 bg-slate-900 px-1 py-0.5 rounded text-xs">@jules</code> 에이전트에게 할당합니다.
           </p>
         </div>
       </div>
@@ -81,8 +81,8 @@
             </svg>
           </div>
 
-          <h5 class="text-sm font-bold text-white mb-1.5">Jules 원격 자동 구현</h5>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
+          <h5 class="text-base font-extrabold text-white mb-1.5">Jules 원격 자동 구현</h5>
+          <p class="text-base text-slate-400 leading-relaxed">
             인공지능 에이전트 <strong class="text-purple-400 font-medium">Jules</strong>가 가상 샌드박스 환경에서 코드를 분석, 자동 설계, 구현 및 테스트를 자동 수행합니다.
           </p>
         </div>
@@ -125,8 +125,8 @@
             </svg>
           </div>
 
-          <h5 class="text-sm font-bold text-white mb-1.5">Vercel 호스팅 & 리뷰</h5>
-          <p class="text-[11px] text-slate-400 leading-relaxed">
+          <h5 class="text-base font-extrabold text-white mb-1.5">Vercel 호스팅 & 리뷰</h5>
+          <p class="text-base text-slate-400 leading-relaxed">
             자동으로 등록된 PR은 실시간으로 <strong class="text-emerald-400 font-medium">Vercel</strong> 클라우드에 배포됩니다. 사용자는 라이브 프리뷰를 보며 승인합니다.
           </p>
         </div>

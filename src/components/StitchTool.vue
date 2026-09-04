@@ -22,7 +22,7 @@
         <h3 class="font-bold text-lg text-white flex items-center gap-2">
           Stitch Tool <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-normal">스티치 도구</span>
         </h3>
-        <p class="text-xs text-slate-400">디자인 커스텀 실시간 재봉기</p>
+        <p class="text-base text-slate-400">디자인 커스텀 실시간 재봉기</p>
       </div>
     </div>
 
