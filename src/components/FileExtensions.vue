@@ -145,7 +145,7 @@
                 </div>
                 <div>
                   <span class="text-[10px] font-mono font-bold tracking-wider text-slate-500 uppercase font-bold">⚙️ 빌드 가공이 왜 필요한가?</span>
-                  <p class="text-xs text-slate-400 mt-1 leading-relaxed">
+                  <p class="text-base text-slate-400 mt-1 leading-relaxed">
                     {{ activeExtension.buildReason }}
                   </p>
                 </div>
@@ -154,12 +154,12 @@
               <!-- Right: Required Tools -->
               <div class="space-y-4 bg-slate-950/40 p-4 rounded-xl border border-slate-800/40">
                 <span class="text-[10px] font-mono font-bold tracking-wider text-indigo-400 uppercase">🔧 해석 및 빌드에 필요한 도구</span>
-                <ul class="space-y-3 mt-1 text-xs">
+                  <ul class="space-y-3 mt-1 text-base">
                   <li v-for="tool in activeExtension.tools" :key="tool.name" class="flex items-start gap-2">
                     <span class="text-indigo-400 font-bold mt-0.5">▪</span>
                     <div>
-                      <strong class="text-white font-bold">{{ tool.name }}</strong>
-                      <p class="text-[10px] text-slate-500 leading-relaxed mt-0.5">{{ tool.desc }}</p>
+                        <strong class="text-white font-bold text-base">{{ tool.name }}</strong>
+                        <p class="text-base text-slate-400 leading-relaxed mt-0.5">{{ tool.desc }}</p>
                     </div>
                   </li>
                 </ul>

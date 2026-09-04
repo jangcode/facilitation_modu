@@ -141,7 +141,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-indigo-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">문맥 복원 및 유지 (Context Bank Restoration)</strong>
+                <strong class="text-white text-base font-extrabold">문맥 복원 및 유지 (Context Bank Restoration)</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   프로젝트 루트 내에 배치된 <code class="font-mono text-xs text-indigo-300 bg-slate-950 px-1 py-0.5 rounded">AGENTS.md</code>나 <code class="font-mono text-xs text-indigo-300 bg-slate-950 px-1 py-0.5 rounded">progress-tracker.md</code> 파일을 먼저 탐색하여, 이전에 어떤 결정이 있었고 다음 단위 목표가 무엇인지 분석해 즉각적으로 작업 지점을 복원합니다.
                 </p>
@@ -151,7 +151,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-indigo-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">빌드·테스트 자동 검증 및 자가 치유 (Self-Healing)</strong>
+                <strong class="text-white text-base font-extrabold">빌드·테스트 자동 검증 및 자가 치유 (Self-Healing)</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   코드 수정 직후 내부 샌드박스에서 <code class="font-mono text-xs text-indigo-300 bg-slate-950 px-1 py-0.5 rounded">npm run build</code>나 린터 검사를 수행하여 TypeScript 컴파일 에러나 포맷 위반이 발생하면 로그를 역추적해 스스로 코드를 완벽히 수정합니다.
                 </p>
@@ -161,7 +161,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-indigo-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">정밀 탐색 및 리팩토링 (Targeted Refactoring)</strong>
+                <strong class="text-white text-base font-extrabold">정밀 탐색 및 리팩토링 (Targeted Refactoring)</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   빌드 아티팩트(dist/, build/)를 건드리지 않고, 파일 구조를 깊이 탐색하여 원본 소스 코드만을 찾아서 정확하게 Git merge diff 방식으로 오염을 차단하며 스타일링과 로직을 점진적 개선합니다.
                 </p>
@@ -179,7 +179,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-pink-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">MCP (Model Context Protocol)</strong>
+                <strong class="text-white text-base font-extrabold">MCP (Model Context Protocol)</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   앤트로픽(Anthropic)에서 정의한 개방형 통신 프로토콜입니다. 거대 언어 모델(LLM)이 로컬 파일 시스템 탐색, 터미널 명령어 호출, 기계 격리 샌드박스 접근, SQL DB 질의 등을 표준화된 API 규격을 통해 안전하게 제어하도록 지원합니다.
                 </p>
@@ -189,7 +189,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-pink-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">Claude Code / Cursor / Windsurf</strong>
+                <strong class="text-white text-base font-extrabold">Claude Code / Cursor / Windsurf</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   단순 프롬프트 대화창을 넘어 멀티 파일 전체 편집, 실시간 로컬 샌드박스 컴파일 검증, 깃 브랜치 관리 등 강력한 에이전틱 코딩 기능이 기본 빌트인되어 있는 최신 개발 IDE 및 CLI 인터페이스 도구입니다.
                 </p>
@@ -199,7 +199,7 @@
             <div class="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
               <span class="text-pink-400 font-bold mt-0.5">▪</span>
               <div>
-                <strong class="text-white text-xs">Vercel & Git-flow CI/CD Pipeline</strong>
+                <strong class="text-white text-base font-extrabold">Vercel & Git-flow CI/CD Pipeline</strong>
                 <p class="text-base text-slate-400 leading-relaxed mt-1">
                   에이전트가 완성한 코드가 Pull Request로 제출되면 배포 운영 서버인 Vercel에서 즉시 임시 프리뷰(Instant Preview) 망을 호스팅해 주고, 인간 개발자가 승인 및 머지하는 즉시 프로덕션 환경에 완전 자동 배포되는 완성도 높은 실무 파이프라인 도구입니다.
                 </p>

@@ -56,16 +56,16 @@
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-            <div class="p-4 rounded-xl bg-slate-950/60 border border-red-500/20 text-xs">
-              <h4 class="font-bold text-red-400 mb-2 flex items-center gap-1.5">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-red-500/20">
+              <h4 class="font-bold text-red-400 mb-2 flex items-center gap-1.5 text-base">
                 ⚠️ 실패 유형 1: 분위기 코딩 붕괴 (Vibe Collapse)
               </h4>
               <p class="text-base text-slate-400 leading-relaxed">
                 넓고 모호하게 설명하여 처음 한 시간은 조립이 빠르지만, 기능을 덧붙일 때 이전에 결정했던 규칙들을 에이전트 스스로 모순되게 바꾸며 코드가 충돌하고 무너집니다. 토대가 없기 때문입니다.
               </p>
             </div>
-            <div class="p-4 rounded-xl bg-slate-950/60 border border-yellow-500/20 text-xs">
-              <h4 class="font-bold text-yellow-400 mb-2 flex items-center gap-1.5">
+            <div class="p-4 rounded-xl bg-slate-950/60 border border-yellow-500/20">
+              <h4 class="font-bold text-yellow-400 mb-2 flex items-center gap-1.5 text-base">
                 ⚠️ 실패 유형 2: 기능 표류 (Feature Drift)
               </h4>
               <p class="text-base text-slate-400 leading-relaxed">
@@ -86,32 +86,32 @@
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 flex flex-col justify-between">
               <div>
                 <span class="text-[10px] font-mono text-indigo-400 font-bold uppercase">Step 1</span>
-                <h4 class="text-xs font-extrabold text-white font-mono mt-1 mb-2">/specify</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">구현하고자 하는 과제의 목표, 비즈니스 설명, 그리고 사용자 시나리오 및 핵심 기능들을 정의합니다.</p>
+                <h4 class="text-base font-extrabold text-white font-mono mt-1 mb-2">/specify</h4>
+                <p class="text-base text-slate-400 leading-relaxed">구현하고자 하는 과제의 목표, 비즈니스 설명, 그리고 사용자 시나리오 및 핵심 기능들을 정의합니다.</p>
               </div>
             </div>
 
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 flex flex-col justify-between">
               <div>
                 <span class="text-[10px] font-mono text-pink-400 font-bold uppercase">Step 2</span>
-                <h4 class="text-xs font-extrabold text-white font-mono mt-1 mb-2">/plan</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">분석을 진행하고, 소프트웨어 구조(아키텍처), 스택, 데이터 흐름, API 구조 및 릴리즈 전략을 세웁니다.</p>
+                <h4 class="text-base font-extrabold text-white font-mono mt-1 mb-2">/plan</h4>
+                <p class="text-base text-slate-400 leading-relaxed">분석을 진행하고, 소프트웨어 구조(아키텍처), 스택, 데이터 흐름, API 구조 및 릴리즈 전략을 세웁니다.</p>
               </div>
             </div>
 
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 flex flex-col justify-between">
               <div>
                 <span class="text-[10px] font-mono text-emerald-400 font-bold uppercase">Step 3</span>
-                <h4 class="text-xs font-extrabold text-white font-mono mt-1 mb-2">/tasks</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">전체 목표를 즉시 실행 가능하고 독립적인 크기의 작은 빌드 단위(Unit)로 쪼개고 목록화합니다.</p>
+                <h4 class="text-base font-extrabold text-white font-mono mt-1 mb-2">/tasks</h4>
+                <p class="text-base text-slate-400 leading-relaxed">전체 목표를 즉시 실행 가능하고 독립적인 크기의 작은 빌드 단위(Unit)로 쪼개고 목록화합니다.</p>
               </div>
             </div>
 
             <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 flex flex-col justify-between">
               <div>
                 <span class="text-[10px] font-mono text-amber-400 font-bold uppercase">Step 4</span>
-                <h4 class="text-xs font-extrabold text-white font-mono mt-1 mb-2">/implement</h4>
-                <p class="text-[11px] text-slate-500 leading-relaxed">각 단위(Unit)별로 스펙 사양서에 부합하는 코드를 자가 수정과 로컬 테스트를 거치며 점진적으로 완성해 나갑니다.</p>
+                <h4 class="text-base font-extrabold text-white font-mono mt-1 mb-2">/implement</h4>
+                <p class="text-base text-slate-400 leading-relaxed">각 단위(Unit)별로 스펙 사양서에 부합하는 코드를 자가 수정과 로컬 테스트를 거치며 점진적으로 완성해 나갑니다.</p>
               </div>
             </div>
           </div>
@@ -147,8 +147,8 @@
         <!-- Essential Questions Callout -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="p-5 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 text-indigo-400">🎁 제품 측면의 질문</h4>
-            <ul class="space-y-2 text-[11px] text-slate-400 leading-relaxed list-disc pl-4">
+            <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-3 text-indigo-400">🎁 제품 측면의 질문</h4>
+            <ul class="space-y-2 text-base text-slate-400 leading-relaxed list-disc pl-4">
               <li>이 애플리케이션은 한 문장으로 무엇을 하는가?</li>
               <li>주요 사용자는 누구이며 핵심 가치는 무엇인가?</li>
               <li>회원가입 후 핵심 가치에 도달하는 유저 플로우는?</li>
@@ -158,8 +158,8 @@
           </div>
 
           <div class="p-5 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 text-pink-400">⚙️ 기술 및 불변조건</h4>
-            <ul class="space-y-2 text-[11px] text-slate-400 leading-relaxed list-disc pl-4">
+            <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-3 text-pink-400">⚙️ 기술 및 불변조건</h4>
+            <ul class="space-y-2 text-base text-slate-400 leading-relaxed list-disc pl-4">
               <li>전체 기술 스택과 라이브러리를 왜 선택했는가?</li>
               <li>데이터는 어디에 저장되는가 (DB, 파일, 캐시)?</li>
               <li>사용자 인증 및 리소스 소유권 검증 모델은?</li>
@@ -169,8 +169,8 @@
           </div>
 
           <div class="p-5 rounded-2xl bg-slate-900/30 border border-slate-800">
-            <h4 class="text-xs font-bold text-white uppercase tracking-wider mb-3 text-amber-400">🎨 디자인 & UI 표준</h4>
-            <ul class="space-y-2 text-[11px] text-slate-400 leading-relaxed list-disc pl-4">
+            <h4 class="text-sm font-extrabold text-white uppercase tracking-wider mb-3 text-amber-400">🎨 디자인 & UI 표준</h4>
+            <ul class="space-y-2 text-base text-slate-400 leading-relaxed list-disc pl-4">
               <li>메인 색상 팔레트와 디자인 토큰은 무엇인가?</li>
               <li>사용할 UI 컴포넌트와 아이콘 라이브러리는?</li>
               <li>기본이 되는 레이아웃 패턴(사이드바, 네비게이션)은?</li>
@@ -253,21 +253,21 @@
           </p>
 
           <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs">
-              <h4 class="font-bold text-white mb-1.5">1. 의존성 역전 우선</h4>
-              <p class="text-slate-500 leading-relaxed">A 기능을 빌드하기 위해 B 기능이 필요하다면 A를 만들기 전 B를 먼저 완성합니다.</p>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900">
+              <h4 class="text-base font-extrabold text-white mb-1.5">1. 의존성 역전 우선</h4>
+              <p class="text-base text-slate-400 leading-relaxed">A 기능을 빌드하기 위해 B 기능이 필요하다면 A를 만들기 전 B를 먼저 완성합니다.</p>
             </div>
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs">
-              <h4 class="font-bold text-white mb-1.5">2. 보안 우선</h4>
-              <p class="text-slate-500 leading-relaxed">인증과 데이터 접근 제어 규칙을 화면 UI나 추가적인 비즈니스 로직보다 선행하여 배치합니다.</p>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900">
+              <h4 class="text-base font-extrabold text-white mb-1.5">2. 보안 우선</h4>
+              <p class="text-base text-slate-400 leading-relaxed">인증과 데이터 접근 제어 규칙을 화면 UI나 추가적인 비즈니스 로직보다 선행하여 배치합니다.</p>
             </div>
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs">
-              <h4 class="font-bold text-white mb-1.5">3. 백엔드 전용 API 먼저</h4>
-              <p class="text-slate-500 leading-relaxed">API 엔드포인트를 완전히 구현한 후, 다음 작업 단위에서 UI를 통합해 충돌 여지를 줄입니다.</p>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900">
+              <h4 class="text-base font-extrabold text-white mb-1.5">3. 백엔드 전용 API 먼저</h4>
+              <p class="text-base text-slate-400 leading-relaxed">API 엔드포인트를 완전히 구현한 후, 다음 작업 단위에서 UI를 통합해 충돌 여지를 줄입니다.</p>
             </div>
-            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900 text-xs">
-              <h4 class="font-bold text-white mb-1.5">4. UI 뼈대 & 모의 데이터</h4>
-              <p class="text-slate-500 leading-relaxed">정적 목업 데이터를 사용해 UI 컴포넌트를 우선 렌더링하고 나중에 실제 API 호출을 엮습니다.</p>
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-900">
+              <h4 class="text-base font-extrabold text-white mb-1.5">4. UI 뼈대 & 모의 데이터</h4>
+              <p class="text-base text-slate-400 leading-relaxed">정적 목업 데이터를 사용해 UI 컴포넌트를 우선 렌더링하고 나중에 실제 API 호출을 엮습니다.</p>
             </div>
           </div>
         </div>
@@ -379,11 +379,11 @@
                 </div>
               </div>
               <div>
-                <h4 class="text-xs font-bold text-white flex items-center gap-2">
-                  <span class="text-[10px] font-mono text-indigo-400 font-semibold" :style="{ color: item.checked ? stitchSettings.colorHex : '' }">[{{ item.phase }}]</span>
+                <h4 class="text-base font-extrabold text-white flex items-center gap-2">
+                  <span class="text-xs font-mono text-indigo-400 font-semibold" :style="{ color: item.checked ? stitchSettings.colorHex : '' }">[{{ item.phase }}]</span>
                   <span :class="{ 'line-through text-slate-500': item.checked }">{{ item.text }}</span>
                 </h4>
-                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">{{ item.description }}</p>
+                <p class="text-base text-slate-400 mt-1 leading-relaxed">{{ item.description }}</p>
               </div>
             </div>
           </div>
