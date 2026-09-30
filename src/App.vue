@@ -21,55 +21,83 @@
         <div class="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full md:w-auto">
           <!-- View Toggle Tabs -->
           <div class="flex bg-slate-900 border border-slate-800 p-0.5 rounded-xl w-full sm:w-auto justify-between sm:justify-start">
-            <button
-              @click="currentTab = 'simulator'"
-              class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex-1 sm:flex-none text-center"
-              :class="currentTab === 'simulator' ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
-            >
-              시뮬레이터<span class="hidden sm:inline"> (Simulator)</span>
-            </button>
 
-            <!-- Dropdown submenu container for '실습 가이드' -->
-            <div class="relative dropdown-container flex-1 sm:flex-none">
+            <!-- Dropdown submenu container for '시뮬레이터' -->
+            <div class="relative simulator-dropdown-container flex-1 sm:flex-none">
               <button
-                @click.stop="toggleDropdown"
+                @click.stop="toggleSimulatorDropdown"
                 class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap w-full text-center flex items-center justify-center gap-1"
-                :class="(currentTab === 'guide' || currentTab === 'environments' || currentTab === 'extensions' || currentTab === 'spec-dev') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+                :class="(currentTab === 'simulator' || currentTab === 'system-simulator') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
               >
-                실습 가이드<span class="hidden sm:inline"> (Guide)</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform duration-200" :class="{ 'rotate-180': dropdownOpen }">
+                시뮬레이터<span class="hidden sm:inline"> (Simulator)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform duration-200" :class="{ 'rotate-180': simulatorDropdownOpen }">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
               </button>
 
               <!-- Dropdown Menu -->
               <div
-                v-if="dropdownOpen"
+                v-if="simulatorDropdownOpen"
+                class="absolute left-0 sm:left-auto sm:right-0 mt-1.5 w-52 bg-slate-900 border border-slate-800 rounded-xl shadow-xl py-1 z-50"
+              >
+                <button
+                  @click="selectTabFromSimulatorDropdown('simulator')"
+                  class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2"
+                  :class="currentTab === 'simulator' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
+                >
+                  <span>🤖</span> Vibe Coding 워크플로우
+                </button>
+                <button
+                  @click="selectTabFromSimulatorDropdown('system-simulator')"
+                  class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
+                  :class="currentTab === 'system-simulator' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
+                >
+                  <span>🖥️</span> 웹 시스템 동작 시뮬레이션
+                </button>
+              </div>
+            </div>
+
+            <!-- Dropdown submenu container for '실습 가이드' -->
+            <div class="relative guide-dropdown-container flex-1 sm:flex-none">
+              <button
+                @click.stop="toggleGuideDropdown"
+                class="px-2.5 sm:px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap w-full text-center flex items-center justify-center gap-1"
+                :class="(currentTab === 'guide' || currentTab === 'environments' || currentTab === 'extensions' || currentTab === 'spec-dev') ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/10' : 'text-slate-400 hover:text-slate-200'"
+              >
+                실습 가이드<span class="hidden sm:inline"> (Guide)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="transition-transform duration-200" :class="{ 'rotate-180': guideDropdownOpen }">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </button>
+
+              <!-- Dropdown Menu -->
+              <div
+                v-if="guideDropdownOpen"
                 class="absolute right-0 mt-1.5 w-48 bg-slate-900 border border-slate-800 rounded-xl shadow-xl py-1 z-50"
               >
                 <button
-                  @click="selectTabFromDropdown('guide')"
+                  @click="selectTabFromGuideDropdown('guide')"
                   class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2"
                   :class="currentTab === 'guide' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
                 >
                   <span>📖</span> 실습 플레이북
                 </button>
                 <button
-                  @click="selectTabFromDropdown('environments')"
+                  @click="selectTabFromGuideDropdown('environments')"
                   class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
                   :class="currentTab === 'environments' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
                 >
                   <span>🌐</span> 실행·개발·운영 환경
                 </button>
                 <button
-                  @click="selectTabFromDropdown('extensions')"
+                  @click="selectTabFromGuideDropdown('extensions')"
                   class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
                   :class="currentTab === 'extensions' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
                 >
                   <span>🔍</span> 파일 확장자
                 </button>
                 <button
-                  @click="selectTabFromDropdown('spec-dev')"
+                  @click="selectTabFromGuideDropdown('spec-dev')"
                   class="w-full text-left px-4 py-2 text-xs font-bold transition-all hover:bg-slate-800 flex items-center gap-2 border-t border-slate-800/50"
                   :class="currentTab === 'spec-dev' ? 'text-indigo-400' : 'text-slate-300 hover:text-white'"
                 >
@@ -111,7 +139,7 @@
     <!-- Main Container -->
     <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-      <!-- Tab 1: Simulator View -->
+      <!-- Tab 1: Simulator View (Vibe Coding Workflow) -->
       <div v-if="currentTab === 'simulator'" class="space-y-8">
         <!-- Welcome Hero Section -->
         <section class="mb-8 relative rounded-3xl p-8 overflow-hidden bg-gradient-to-br from-indigo-950/20 to-slate-900/60 border border-slate-800/80">
@@ -233,6 +261,11 @@
       </section>
       </div>
 
+      <!-- Tab 1-2: System Simulator View -->
+      <div v-else-if="currentTab === 'system-simulator'">
+        <SystemSimulator :stitchSettings="stitchSettings" />
+      </div>
+
       <!-- Tab 2: Vibe Coding Guide View -->
       <div v-else-if="currentTab === 'guide'">
         <!-- Vibe Coding Guide (Full Width) -->
@@ -290,6 +323,7 @@ import VibeCodingGuide from './components/VibeCodingGuide.vue'
 import Environments from './components/Environments.vue'
 import FileExtensions from './components/FileExtensions.vue'
 import SpecDevelopment from './components/SpecDevelopment.vue'
+import SystemSimulator from './components/SystemSimulator.vue'
 
 export default {
   name: 'App',
@@ -300,33 +334,49 @@ export default {
     VibeCodingGuide,
     Environments,
     FileExtensions,
-    SpecDevelopment
+    SpecDevelopment,
+    SystemSimulator
   },
   setup() {
     const currentTab = ref('simulator')
-    const dropdownOpen = ref(false)
+    const simulatorDropdownOpen = ref(false)
+    const guideDropdownOpen = ref(false)
 
-    const toggleDropdown = () => {
-      dropdownOpen.value = !dropdownOpen.value
+    const toggleSimulatorDropdown = () => {
+      simulatorDropdownOpen.value = !simulatorDropdownOpen.value
+      guideDropdownOpen.value = false
     }
 
-    const selectTabFromDropdown = (tabId) => {
+    const toggleGuideDropdown = () => {
+      guideDropdownOpen.value = !guideDropdownOpen.value
+      simulatorDropdownOpen.value = false
+    }
+
+    const selectTabFromSimulatorDropdown = (tabId) => {
       currentTab.value = tabId
-      dropdownOpen.value = false
+      simulatorDropdownOpen.value = false
     }
 
-    const closeDropdown = (e) => {
-      if (!e.target.closest('.dropdown-container')) {
-        dropdownOpen.value = false
+    const selectTabFromGuideDropdown = (tabId) => {
+      currentTab.value = tabId
+      guideDropdownOpen.value = false
+    }
+
+    const closeDropdowns = (e) => {
+      if (!e.target.closest('.simulator-dropdown-container')) {
+        simulatorDropdownOpen.value = false
+      }
+      if (!e.target.closest('.guide-dropdown-container')) {
+        guideDropdownOpen.value = false
       }
     }
 
     onMounted(() => {
-      window.addEventListener('click', closeDropdown)
+      window.addEventListener('click', closeDropdowns)
     })
 
     onUnmounted(() => {
-      window.removeEventListener('click', closeDropdown)
+      window.removeEventListener('click', closeDropdowns)
     })
     const stitchSettings = ref({
       colorId: 'pink',
@@ -408,9 +458,12 @@ export default {
       customStitchLineStyle,
       decorativeGridStyle,
       getItemStyle,
-      dropdownOpen,
-      toggleDropdown,
-      selectTabFromDropdown
+      simulatorDropdownOpen,
+      guideDropdownOpen,
+      toggleSimulatorDropdown,
+      toggleGuideDropdown,
+      selectTabFromSimulatorDropdown,
+      selectTabFromGuideDropdown
     }
   }
 }
